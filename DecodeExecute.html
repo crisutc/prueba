@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+<title>
+Ciclo de Fetch-DecodeExecute
+
+</title>
+<font color="orange">
+
+
+<H1 align="center">Ciclo de Fetch-DecodeExecute </H>
+</font>
+</head>
+
+<body bgcolor="black">
+<font color="orange">
+
+    <h4><p align="justify">
+        • 1.- Buscar la instrucción en la memoria principal 
+    • • Se vuelca el valor del contador de programa sobre el bus de direcciones.  
+    • • Entonces la CPU pasa la instrucción de la memoria principal a través del bus de datos al Registro de Datos de Memoria (MDR). 
+    • • A continuación el valor del MDR es colocado en el Registro de Instrucción Actual (CIR), un circuito que guarda la instrucción temporalmente de manera que pueda ser decodificada y ejecutada. 
+    • 2.- Decodificar la instrucción  
+    • • El decodificador de instrucción interpreta e implementa la instrucción.  
+    • • El registro de instrucción (IR) mantiene la instrucción en curso mientras el contador de programa (PC, program counter) guarda la dirección de memoria de la siguiente instrucción a ser ejecutada. 
+    • • Recogida de datos desde la memoria principal  
+    • • También se lee la dirección efectiva de la memoria principal si la instrucción tiene una dirección indirecta, y se recogen los datos requeridos de la memoria principal para ser procesados y colocados en los registros de datos. 
+    • 3.- Ejecutar la instrucción  
+    • • A partir del registro de instrucción, los datos que forman la instrucción son decodificados por la unidad de control.  
+    • • Ésta interpreta la información como una secuencia de señales de control que son enviadas a las unidades funcionales relevantes de la CPU para realizar la operación requerida por la instrucción. 
+    • 4.- Almacenar o guardar resultados  
+    • • El resultado generado por la operación es almacenado en la memoria principal o enviado a un dispositivo de salida dependiendo de la instrucción.  
+    • • Basándose en los resultados de la operación, el contador de programa se incrementa para apuntar a la siguiente instrucción o se actualiza con una dirección diferente donde la próxima instrucción será recogida. 
+    • Ciclo de búsqueda  
+    • • Los pasos 1 y 2 del ciclo de instrucción se conocen como ciclo de búsqueda (fetch). Estos pasos son idénticos en todas las instrucciones.  
+    • • El ciclo de búsqueda procesa la instrucción a partir de la palabra de instrucción, que contiene el código de operación y el operando. 
+    • Ciclo de ejecución.  
+    • Los pasos 3 y 4 del ciclo de instrucción se conocen como ciclo de ejecución. Estos pasos cambiarán con cada tipo de instrucción. 
+    • • El primer paso del ciclo de ejecución es el proceso de memoria, en que los datos se transfieren entre la CPU y el módulo de entrada/salida (I/O).  
+    • • A continuación se produce el proceso de datos, que usa operaciones matemáticas así como operaciones lógicas en referencia a los datos.  
+    • • Después tiene lugar el paso de alteraciones centrales, que son una secuencia de operaciones, por ejemplo una operación de salto. El último paso es una operación combinada de todos los otros pasos.
+     </p></H4>
+    
+<h4><p align="justify"> 
+
+</p ></H4>
+<a href="file:///home/cristhian/Escritorio/pagina/index.html" target="_blank" ; return false;"><input type="button" value="REGRESAR"></a>
+</font>
+</body>
+
+
+</html>

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+
+<title>
+Modos de direccionamiento y formatos
+
+</title>
+<font color="orange">
+
+<H1 align="center">Modos de direccionamiento y formatos</H>
+</font>
+</head>
+
+<body bgcolor="black"">
+<font color="orange">
+
+    <h4><p align="justify"> 
+    Son las diferentes maneras de especificar un operando dentro de una instrucción. Un modo de direccionamiento especifica la forma de calcular la dirección de memoria efectiva de un operando mediante el uso de la información contenida en registros dentro de una instrucción de la máquina.
+    </p></H4>
+    
+<h4><p align="justify">  
+
+Direccionamiento implícito
+Depende solamente de la instrucción, es decir, la instrucción no lleva parámetros.
+Particularmente en instrucciones que no accesan memoria, o bien que tienen una forma específica de accesarla.
+Ejemplos: PUSHF, POPF, NOP
+</p ></H4>
+
+<h4><p align="justify"> 
+Modo registro
+Usa solamente registros como operandos
+Es el más rápido, pues minimiza los recursos necesarios (toda la información fluye dentro del EU del CPU)
+Ejemplo:
+MOV AX, BX
+
+</p ></H4>
+
+<h4><p align="justify"> 
+
+Modo inmediato
+Tiene dos operandos: un registro y una constante que se usa por su valor.
+El valor constante no se tiene que buscar en memoria, pues ya se obtuvo al hacer el “fetch” de la instrucción.
+Ejemplo:
+MOV AH, 9
+</p ></H4>
+
+<h4><p align="justify"> 
+Modo directo
+Uno de los operandos involucra una localidad específica de memoria
+El valor constante se tiene que buscar en memoria, en la localidad especificada.
+Es más lento que los anteriores, pero es el más rápido para ir a memoria, pues ya “sabe” la localidad, la toma de la instrucción y no la tiene que calcular.
+Ejemplo:
+MOV AH, [0000]
+MOV AH, Variable
+Estas dos instrucciones serían equivalentes, si Variable está, por ejemplo, en la localidad 0 de memoria. En la forma primitiva del lenguaje de máquina, como el primer ejemplo, se tiene que indicar “mover a AH el contenido (indicado por los corchetes), de la localidad 0 de los datos (lo de los datos es implícito). El lenguaje Ensamblador, sin embargo, nos permite la abstracción del uso de variables, pero como una variable tiene una localidad determinada en memoria, para el procesador funciona igual. La única diferencia consiste en que el programador no tiene que preocuparse por la dirección, ese manejo lo hace automáticamente el Ensamblador.
+
+</p ></H4>
+
+<h4><p align="justify"> 
+Modo indirecto
+Se usan los registros SI, DI como apuntadores
+El operando indica una localidad de memoria, cuya dirección (sólo la parte desplazamiento) está en SI o DI.
+Es más lento que los anteriores, pues tiene que “calcular” la localidad
+Ejemplos:
+MOV AL, [SI]
+MOV BL, ES:[SI] ; Aquí se dice que se usa un “segment override”, donde se indica que en vez de usar el segmento de datos por defecto, se use en su lugar como referencia el segmento extra.
+
+</p ></H4>
+
+<h4><p align="justify"> 
+
+Modo indexado de base
+Formato:
+[
+BX o BP
++ SI o DI (opcionales)
++ constante (opcional)
+]
+BX o BP indica una localidad base de la memoria
+A partir de BX o BP, se puede tener un desplazamiento variable y uno constante
+La diferencia es el segmento sobre el que trabajan por defecto:
+BX por defecto en el segmento de datos
+BP por defecto en el segmento de pila.
+Ejemplos:
+MOV AX, [BX]
+MOV DX, [BX+2]
+MOV CX, [BX+DI]
+MOV DL, [BX+SI+3]
+</p ></H4>
+
+
+</font>
+
+
+<a href="file:///home/cristhian/Escritorio/pagina/index.html" target="_blank"  return false;"><input type="button" value="REGRESAR"></a>
+
+
+
+</body>
+
+
+</html>
